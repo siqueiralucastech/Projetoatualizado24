@@ -1,15 +1,14 @@
- let btnMenu = document.getElementById("btn-menu");
-let menu = document.getElementById("menu-mobile");
-let overlay = document.getElementById("overlay-menu");
- 
-btnMenu.addEventListener("click", () => {
-  menu.classList.add("abrir-menu");
+const body = document.body;
+const openMobileMenuButton = document.querySelector(".open-mobile-menu-button");
+const mobileMenu = document.querySelector(".mobile-menu");
+const closeMobileMenuButton = document.querySelector(".btn-fechar");
+
+openMobileMenuButton.addEventListener("click", () => {
+  mobileMenu.classList.remove("hidden");
+  body.style.overflow = "hidden";
 });
- 
-menu.addEventListener("click", () => {
-  menu.classList.remove("abrir-menu");
-});
- 
-overlay.addEventListener("click", () => {
-  menu.classList.remove("abrir-menu");
+
+closeMobileMenuButton.addEventListener("click", () => {
+  mobileMenu.classList.add("hidden");
+  body.style.overflow = "scroll";
 });
